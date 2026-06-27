@@ -1,11 +1,18 @@
+// Corne 42-key wireless (nice_nano_v2) configuration.
+// Wraps the shared base.keymap with outer columns for the 6th column per side.
+
 #define CONFIG_WIRELESS
-#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                   \
+
+// Define the 42-key layout wrapper. The base.keymap provides 5-column inner
+// keys per side (LT/RT, LM/RM, LB/RB) and 2 inner thumb keys per side (LH/RH).
+// This macro adds the outer column and extra thumb for each side.
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
     ZMK_LAYER(                                                                 \
         name,                                                                  \
-                 &none LT RT &none                                              \
-                 &none LM RM &none                                              \
-                 &none LB RB &none                                              \
-        &none LH RH &none                                                       \
+        &kp TAB   LT RT &kp ESC                                               \
+        &kp LCTRL LM RM &kp SQT                                               \
+        &kp LSHFT LB RB &key_repeat                                            \
+        &kp LGUI  LH RH &smart_mouse                                           \
     )
 
 #include "zmk-helpers/key-labels/42.h"
