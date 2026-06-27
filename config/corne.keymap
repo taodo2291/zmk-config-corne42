@@ -9,10 +9,10 @@
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
     ZMK_LAYER(                                                                 \
         name,                                                                  \
-        &kp TAB   LT RT &kp ESC                                               \
-        &kp LCTRL LM RM &kp SQT                                               \
-        &kp LSHFT LB RB &key_repeat                                            \
-        &kp LGUI  LH RH &smart_mouse                                           \
+        &kp F13   LT RT &kp F14                                               \
+        &kp F15   LM RM &kp F16                                               \
+        &kp F17   LB RB &kp F18                                               \
+        &kp F19   LH RH &kp F20                                               \
     )
 
 #include "zmk-helpers/key-labels/42.h"
